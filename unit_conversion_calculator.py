@@ -47,8 +47,7 @@ def imperial_convert():
         else:
             print("INVALID")
             time.sleep(2)
-            imperial_convert()
-
+            
 
 def metric_convert():
     while True:
@@ -86,6 +85,9 @@ def metric_convert():
             print("Exiting program")
             time.sleep(1)
             break
+        else:
+            print("INVALID")
+            time.sleep(2)
 
 def imperial_to_metric():
     while True:
@@ -125,12 +127,35 @@ def imperial_to_metric():
             print("Exiting Conversion")
             time.sleep(1)
             break
+        else:
+            print("INVALID")
+            time.sleep(2)
 
 def metric_to_imperial():
-    print("metric to imperial")
+    while True:
+        first_value = str(input("Unit to convert from?\n (1): Milimeters\n (2): Centimeters\n (3): Meters\n (4): Kilometers\n (5): Switch Conversion\n (6): Exit Conversion\n>"))
+        value = float(input("Enter value to convert: "))
+        if first_value == "1":
+            print("mm")
+        elif first_value == "2":
+            print("cm")
+        elif first_value == "3":
+            print("m")
+        elif first_value == "4":
+            print("km")
+        elif first_value == "5":
+            print("Switching conversion")
+            return
+        elif first_value == "6":
+            print("Exiting conversion")
+            break
+        else:
+            print("INVALID")
+            time.sleep(2)
+
 def get_info():
     while True:
-        unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. > Metric\n (4): Metric > Imp.\n (5): Exit Program> "))
+        unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Exit Program> "))
 
         if unit_system == "1":
             imperial_convert()

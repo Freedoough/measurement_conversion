@@ -48,7 +48,6 @@ def imperial_convert():
             print("INVALID")
             time.sleep(2)
             
-
 def metric_convert():
     while True:
         first_unit =  str(input("Unit to convert from?\n (1): Milimeters\n (2): Centimeters\n (3): Meters\n (4): Kilometers\n (5): Switch Conversion\n (6): Exit Conversion\n>"))
@@ -176,17 +175,37 @@ def metric_to_imperial():
 
 def get_info():
     while True:
-        unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Exit Program> "))
+        
+        def distance_convert():
+            while True:
+                unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Exit Program\n> "))
+            
+                if unit_system == "1":
+                    imperial_convert()
+                elif unit_system == "2":
+                    metric_convert()
+                elif unit_system == "3":
+                    imperial_to_metric()
+                elif unit_system == "4":
+                    metric_to_imperial()
+                elif unit_system == "5":
+                    print("Exiting Program")
+                    exit
+            
+        #def weight_convert():
+           # unit_system = str(input("Which measurement system are you converting?"))
 
-        if unit_system == "1":
-            imperial_convert()
-        elif unit_system == "2":
-            metric_convert()
-        elif unit_system == "3":
-            print("Imperial to metric")
-        elif unit_system == "4":
-            print("Metric to imperial")
-        elif unit_system == "5":
+        measurement_type = str(input("What type of conversion would you like to convert?\n (1): Distance\n (2): Weight\n (3) Exit Program\n>"))
+        
+        if measurement_type == "1":
+            distance_convert()
+        elif measurement_type == "2":
+            print("weight convert")
+        elif measurement_type == "3":
             print("Exiting Program")
             break
+        
+        
+        
+
 get_info()

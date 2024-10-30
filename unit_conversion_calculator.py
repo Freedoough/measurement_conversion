@@ -195,6 +195,13 @@ def imperial_weight():
 def metric_weight():
     print("metric weight")
 
+
+def imp_to_metric_weight():
+    print("imp to metric weight")
+
+def metric_to_imp_weight():
+    print("metric to imp weight")
+
 def get_info():
     while True:
         
@@ -220,17 +227,21 @@ def get_info():
                     sys.exit()
             
         def weight_convert():
-            unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Switch Conversion\n (4): Exit Program\n> "))
+            unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Switch Conversion\n (6): Exit Program\n> "))
 
             if unit_system == "1":
                 imperial_weight()
             elif unit_system == "2":
                 metric_weight()
             elif unit_system == "3":
+                imp_to_metric_weight()
+            elif unit_system == "4":
+                metric_to_imp_weight()
+            elif unit_system == "5":
                 print("Switching Conversion\n")
                 time.sleep(1)
                 return 
-            elif unit_system == "4":
+            elif unit_system == "6":
                 print("Exiting Program")
                 sys.exit()
             else:

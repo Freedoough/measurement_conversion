@@ -9,10 +9,10 @@ time.sleep(1)
 
 def imperial_convert():
     while True: # Imperial system unit conversion loop
-        first_unit = str(input("Unit to convert from?\n (1): Inches\n (2): Feet\n (3): Yards\n (4): Miles\n (5): Switch Conversion\n (6): Exit Program\n> "))
+        first_unit = str(input("Unit to convert from?\n (1): Inches\n (2): Feet\n (3): Yards\n (4): Miles\n (5): Switch Conversion\n (6): Exit Program\n> ").rstrip())
 
         if first_unit == "1": # Inches conversion to other units
-            value = float(input("Enter value to convert:"))
+            value = float(input("Enter value to convert:").rstrip())
             print(f"{value} inches is {value / 12} feet")
             print(f"{value} inches is {value / 36} yards")
             print(f"{value} inches is {value / 63360} miles")
@@ -21,7 +21,7 @@ def imperial_convert():
             print("\n")
             time.sleep(1)
         elif first_unit == "2": # Feet conversion to other units
-            value = float(input("Enter value to convert:"))
+            value = float(input("Enter value to convert:").rstrip())
             print(f"{value} feet is {value * 12} inches")
             print(f"{value} feet is {value / 3} yards")
             print(f"{value} feet is {value / 5280} miles")
@@ -30,7 +30,7 @@ def imperial_convert():
             print("\n")
             time.sleep(1)
         elif first_unit == "3": # Yards conversion to other units
-            value = float(input("Enter value to convert:"))
+            value = float(input("Enter value to convert:").rstrip())
             print(f"{value} yards is {value * 36} inches")
             print(f"{value} yards is {value * 3} feet")
             print(f"{value} yards is {value / 1760} miles")
@@ -39,7 +39,7 @@ def imperial_convert():
             print("\n")
             time.sleep(1)
         elif first_unit == "4": # Miles conversion to other units
-            value = float(input("Enter value to convert:"))
+            value = float(input("Enter value to convert:").rstrip())
             print(f"{value} miles is {value * 63360} inches")
             print(f"{value} miles is {value * 5280} feet")
             print(f"{value} miles is {value * 1760} yards")
@@ -57,13 +57,14 @@ def imperial_convert():
         else:
             print("INVALID")
             time.sleep(2)
+            print("\n")
             
 def metric_convert():
     while True:
-        first_unit =  str(input("Unit to convert from?\n (1): Milimeters\n (2): Centimeters\n (3): Meters\n (4): Kilometers\n (5): Switch Conversion\n (6): Exit Program\n>"))
+        first_unit =  str(input("Unit to convert from?\n (1): Milimeters\n (2): Centimeters\n (3): Meters\n (4): Kilometers\n (5): Switch Conversion\n (6): Exit Program\n>").rstrip())
     
         if first_unit == "1":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}mm is {value / 10}cm")
             print(f"{value}mm is {value / 1000}m")
             print(f"{value}mm is {value / 1000000}km")
@@ -72,7 +73,7 @@ def metric_convert():
             print("\n")
             time.sleep(1)
         elif first_unit == "2":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}cm is {value * 10}mm")
             print(f"{value}cm is {value / 100}m")
             print(f"{value}cm is {value /100000}km")
@@ -81,7 +82,7 @@ def metric_convert():
             print("\n")
             time.sleep(1)
         elif first_unit == "3":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}m is {value * 1000}mm")
             print(f"{value}m is {value * 100}cm")
             print(f"{value}m is {value / 1000}km")
@@ -90,7 +91,7 @@ def metric_convert():
             print("\n")
             time.sleep(1)
         elif first_unit == "4":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}km is {value * 1000000}mm")
             print(f"{value}km is {value * 100000}cm")
             print(f"{value}km is {value * 1000}m")
@@ -109,13 +110,14 @@ def metric_convert():
         else:
             print("INVALID")
             time.sleep(2)
+            print("\n")
 
 def imperial_to_metric():
     while True:
-        first_unit = str(input("Unit to convert from?\n (1): Inches\n (2): Feet\n (3): Yards\n (4): Miles\n (5): Switch Conversion\n (6): Exit Program\n>"))
+        first_unit = str(input("Unit to convert from?\n (1): Inches\n (2): Feet\n (3): Yards\n (4): Miles\n (5): Switch Conversion\n (6): Exit Program\n>").rstrip())
         
         if first_unit == "1":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value} inches is {value * 25.4}mm")
             print(f"{value} inches is {value * 2.54}cm")
             print(f"{value} inches is {value / 39.37}m")
@@ -125,7 +127,7 @@ def imperial_to_metric():
             print("\n")
             time.sleep(1)
         elif first_unit == "2":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value} feet is {value * 304.8}mm")
             print(f"{value} feet is {value * 30.48}cm")
             print(f"{value} feet is ~{value / 3.281}m")
@@ -135,7 +137,7 @@ def imperial_to_metric():
             print("\n")
             time.sleep(1)
         elif first_unit == "3":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value} yards is {value * 914.4}mm")
             print(f"{value} yards is {value * 91.44}cm")
             print(f"{value} yards is ~{value / 1.094}m")
@@ -145,7 +147,7 @@ def imperial_to_metric():
             print("\n")
             time.sleep(1)
         elif first_unit == "4":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value} miles is ~{value * 1,608,000}mm")
             print(f"{value} miles is ~{value * 160900}cm")
             print(f"{value} miles is ~{value * 1609}m")
@@ -165,13 +167,14 @@ def imperial_to_metric():
         else:
             print("INVALID")
             time.sleep(2)
+            print("\n")
 
 def metric_to_imperial():
     while True:
-        first_value = str(input("Unit to convert from?\n (1): Milimeters\n (2): Centimeters\n (3): Meters\n (4): Kilometers\n (5): Switch Conversion\n (6): Exit Program\n>"))
+        first_value = str(input("Unit to convert from?\n (1): Milimeters\n (2): Centimeters\n (3): Meters\n (4): Kilometers\n (5): Switch Conversion\n (6): Exit Program\n>").rstrip())
         
         if first_value == "1":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}mm is {value / 25.4} inches")
             print(f"{value}mm is {value / 304.8} feet")
             print(f"{value}mm is {value / 914.4} yards")
@@ -181,7 +184,7 @@ def metric_to_imperial():
             print("\n")
             time.sleep(1)
         elif first_value == "2":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}cm is {value / 2.54} inches")
             print(f"{value}cm is {value / 30.48} feet")
             print(f"{value}cm is {value / 91.44} yards")
@@ -191,7 +194,7 @@ def metric_to_imperial():
             print("\n")
             time.sleep(1)
         elif first_value == "3":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}m is {value * 39.37} inches")
             print(f"{value}m is ~{value * 3.281} feet")
             print(f"{value}m is ~{value * 1.094} yards")
@@ -202,7 +205,7 @@ def metric_to_imperial():
             time.sleep(1)
 
         elif first_value == "4":
-            value = float(input("Enter value to convert: "))
+            value = float(input("Enter value to convert: ").rstrip())
             print(f"{value}km is ~{value * 39370} inches")
             print(f"{value}km is ~{value * 3281} feet")
             print(f"{value}km is ~{value * 1094} yards")
@@ -221,6 +224,7 @@ def metric_to_imperial():
         else:
             print("INVALID")
             time.sleep(2)
+            print("\n")
 
 def imperial_weight():
     print("imperial weight")
@@ -259,9 +263,14 @@ def get_info():
                     print("Exiting Program")
                     time.sleep(1)
                     sys.exit()
+                else:
+                    print("INVALID")
+                time.sleep(2)
+                print("\n")
+
             
         def weight_convert():
-            unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Switch Conversion\n (6): Exit Program\n> "))
+            unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Switch Conversion\n (6): Exit Program\n> ").rstrip())
 
             if unit_system == "1":
                 imperial_weight()

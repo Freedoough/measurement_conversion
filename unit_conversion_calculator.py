@@ -2,6 +2,7 @@ import math
 import time
 import sys
 
+# add unit abbreviations in menu options and use them in calculation output
 
 print("Unit Conversion\n\n") # Program title
 time.sleep(1)
@@ -28,7 +29,7 @@ def imperial_convert():
             else:
                 while True:
                     try:
-                        value = float(input("Enter value to convert:").rstrip())
+                        value = float(input("Enter value to convert: ").rstrip())
                         break
                     except ValueError:
                         print("INVALID input, please enter a numeric value.\n")
@@ -270,19 +271,67 @@ def metric_to_imperial():
                     time.sleep(2)
                     print("\n")
 
-def imperial_weight():
-    print("imperial weight")
+def imperial_mass():
+    while True:
+        print("Imperial mass measurement conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Ounces (oz)\n (2): Pounds (lb)\n (3): US Tons (tn)\n (4): Switch Conversion\n (5): Exit Program\n> "))
+
+        if first_unit in ["1", "2", "3", "4", "5", "6"]:
+
+            if first_unit == "5":
+                print("Switching Conversion\n")
+                time.sleep(1)
+            elif first_unit == "6":
+                print("Exiting Program")
+                sys.exit()
+
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter a numeric value.\n")
+                        time.sleep(2)
+
+                        # oz, lbs, tn
+                    if first_unit == "1":
+                        print(f"{value} oz is {value / 16} lbs") #placeholder for equations
+                        print(f"{value} oz is {value / 3200} tn")
+                        
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    elif first_unit == "2":
+                        print(f"{value}lbs is {value * 16} oz")
+                        print(f"{value} lbs is {value * 2000} tn")
+                        
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    elif first_unit == "3":
+                        print(f"{value}tn is {value * 32000} oz")
+                        print(f"{value} tn is {value * 2000} lbs")
+
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    else:
+                        print("INVALID")
+                        time.sleep(2)
+                        print("\n")
+
+def metric_mass():
+    print("metric mass")
 
 
-def metric_weight():
-    print("metric weight")
+def imp_to_metric_mass():
+    print("imp to metric mass")
 
-
-def imp_to_metric_weight():
-    print("imp to metric weight")
-
-def metric_to_imp_weight():
-    print("metric to imp weight")
+def metric_to_imp_mass():
+    print("metric to imp mass")
 
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
     while True:
@@ -317,17 +366,17 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                 print("\n")
 
             
-        def weight_convert():
+        def mass_convert():
             unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Switch Conversion\n (6): Exit Program\n> ").rstrip())
 
             if unit_system == "1":
-                imperial_weight()
+                imperial_mass()
             elif unit_system == "2":
-                metric_weight()
+                metric_mass()
             elif unit_system == "3":
-                imp_to_metric_weight()
+                imp_to_metric_mass()
             elif unit_system == "4":
-                metric_to_imp_weight()
+                metric_to_imp_mass()
             elif unit_system == "5":
                 print("Switching Conversion\n")
                 time.sleep(1)
@@ -345,12 +394,12 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
         # Temperature
         # Volume
         # Velocity
-        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Weight\n (3): Exit Program\n> ").rstrip())
+        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Exit Program\n> ").rstrip())
         
         if measurement_type == "1":
             distance_convert()
         elif measurement_type == "2":
-            weight_convert()
+            mass_convert()
         elif measurement_type == "3":
             print("Exiting Program")
             time.sleep(1)

@@ -17,57 +17,58 @@ def imperial_convert():
 
         if first_unit in ["1", "2", "3", "4", "5", "6"]:
             
-            if first_unit == "5": # Switch conversion system
-                print("Switching Conversion\n")
-                time.sleep(1)
-                return
-            elif first_unit == "6": # Exit program
-                print("Exiting Program")
-                sys.exit()
-            else:
-                while True:
-                    try:
-                        value = float(input("Enter value to convert:").rstrip())
-                        break
-                    except ValueError:
-                        print("INVALID input, please enter a numeric value.\n")
-                        time.sleep(2)
-                if first_unit == "1": # Inches conversion to other units
-                    print(f"{value} inches is {value / 12} feet")
-                    print(f"{value} inches is {value / 36} yards")
-                    print(f"{value} inches is {value / 63360} miles")
-
-                    time.sleep(3)
-                    print("\n")
+                if first_unit == "5": # Switch conversion system
+                    print("Switching Conversion\n")
                     time.sleep(1)
-                elif first_unit == "2": # Feet conversion to other units
-                    print(f"{value} feet is {value * 12} inches")
-                    print(f"{value} feet is {value / 3} yards")
-                    print(f"{value} feet is {value / 5280} miles")
+                    return
+                elif first_unit == "6": # Exit program
+                    print("Exiting Program")
+                    sys.exit()
 
-                    time.sleep(3)
-                    print("\n")
-                    time.sleep(1)
-                elif first_unit == "3": # Yards conversion to other units
-                    print(f"{value} yards is {value * 36} inches")
-                    print(f"{value} yards is {value * 3} feet")
-                    print(f"{value} yards is {value / 1760} miles")
-
-                    time.sleep(3)
-                    print("\n")
-                    time.sleep(1)
-                elif first_unit == "4": # Miles conversion to other units
-                    print(f"{value} miles is {value * 63360} inches")
-                    print(f"{value} miles is {value * 5280} feet")
-                    print(f"{value} miles is {value * 1760} yards")
-
-                    time.sleep(3)
-                    print("\n")
-                    time.sleep(1)
                 else:
-                    print("INVALID")
-                    time.sleep(2)
-                    print("\n")
+                    while True:
+                        try:
+                            value = float(input("Enter value to convert:").rstrip())
+                            break
+                        except ValueError:
+                            print("INVALID input, please enter a numeric value.\n")
+                            time.sleep(2)
+                    if first_unit == "1": # Inches conversion to other units
+                        print(f"{value} inches is {value / 12} feet")
+                        print(f"{value} inches is {value / 36} yards")
+                        print(f"{value} inches is {value / 63360} miles")
+
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    elif first_unit == "2": # Feet conversion to other units
+                        print(f"{value} feet is {value * 12} inches")
+                        print(f"{value} feet is {value / 3} yards")
+                        print(f"{value} feet is {value / 5280} miles")
+
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    elif first_unit == "3": # Yards conversion to other units
+                        print(f"{value} yards is {value * 36} inches")
+                        print(f"{value} yards is {value * 3} feet")
+                        print(f"{value} yards is {value / 1760} miles")
+
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    elif first_unit == "4": # Miles conversion to other units
+                        print(f"{value} miles is {value * 63360} inches")
+                        print(f"{value} miles is {value * 5280} feet")
+                        print(f"{value} miles is {value * 1760} yards")
+
+                        time.sleep(3)
+                        print("\n")
+                        time.sleep(1)
+                    else:
+                        print("INVALID")
+                        time.sleep(2)
+                        print("\n")
             
 def metric_convert():
     while True:

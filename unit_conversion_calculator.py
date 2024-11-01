@@ -276,7 +276,7 @@ def imperial_mass():
         print("Imperial mass measurement conversion:\n")
         time.sleep(1)
 
-        first_unit = str(input("Unit to convert from?\n (1): Ounces (oz)\n (2): Pounds (lb)\n (3): US Tons (tn)\n (4): Switch Conversion\n (5): Exit Program\n> "))
+        first_unit = str(input("Unit to convert from?\n (1): Ounces (oz)\n (2): Pounds (lb)\n (3): US Tons (tn)\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
 
         if first_unit in ["1", "2", "3", "4", "5", "6"]:
 
@@ -324,14 +324,175 @@ def imperial_mass():
                         print("\n")
 
 def metric_mass():
-    print("metric mass")
+    while True:
+
+        print("Metric system mass measurement conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Milligram (mg)\n (2): Gram (g)\n (3): Kilogram (kg)\n (4): Switch conversion\n (5): Exit Program\n> ").rstrip())
+        
+        if first_unit in ["1", "2", "3", "4", "5"]:
+
+            if first_unit == "5":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "6":
+                print("Exiting Program")
+                sys.exit()
+
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter a numeric value. \n")
+
+                if first_unit == "1":
+                    print(f"{value} mg is {value / 1000} g")
+                    print(f"{value} mg is {value / 32000} kg")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} g is {value * 1000} mg")
+                    print(f"{value} g is {value / 1000} kg")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "3":
+                    print(f"{value} kg is {value / 1000000} mg")
+                    print(f"{value} kg is {value * 1000} g")
+                    
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
 
 
 def imp_to_metric_mass():
-    print("imp to metric mass")
+    while True:
+
+        print("Imperial to Metric mass conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Ounces (oz)\n (2): Pounds (lb)\n (3): US Tons (tn)\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3", "4", "5"]:
+            if first_unit == "5":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "6":
+                print("Exiting Program")
+                sys.exit()
+
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+
+                if first_unit == "1":
+                    print(f"{value} oz is ~{value * 28350} mg")
+                    print(f"{value} oz is ~{value * 28.35} g")
+                    print(f"{value} oz is {value / 35.274} kg")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} lb is ~{value * 453600} mg")
+                    print(f"{value} lb is ~{value * 453.6} g")
+                    print(f"{value} lb is ~{value / 2.205} kg")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "3":
+                    print(f"{value} tn is ~{value * 907200000} mg")
+                    print(f"{value} tn is ~{value * 907200} g")
+                    print(f"{value} tn is ~{value * 907.2} kg")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
+
+
 
 def metric_to_imp_mass():
-    print("metric to imp mass")
+    while True:
+
+        print("Metric to Imperial mass conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Milligrams (mg)\n (2): Grams (g)\n (3): Kilograms\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
+        
+        if first_unit in ["1", "2", "3", "4", "5"]:
+            if first_unit == "5":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "6":
+                print("Exiting Program")
+                sys.exit()
+
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+
+                if first_unit == "1":
+                    print(f"{value} mg is ~{value / 28350} oz")
+                    print(f"{value} mg is ~{value / 453600} lb")
+                    print(f"{value} mg is ~{value / 907200000} tn")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+
+                elif first_unit == "2":
+                    print(f"{value} g is ~{value / 28.35} oz")
+                    print(f"{value} g is ~{value / 453.6} lb")
+                    print(f"{value} g is ~{value / 907200} tn")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+
+                elif first_unit == "3":
+                    print(f"{value} kg is {value * 35.274} oz")
+                    print(f"{value} kg is ~{value * 2.205} lb")
+                    print(f"{value} kg is ~{value / 907.2} tn")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
+
+
+
 
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
     while True:

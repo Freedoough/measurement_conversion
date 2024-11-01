@@ -376,7 +376,6 @@ def metric_mass():
                     time.sleep(2)
                     print("\n")
 
-
 def imp_to_metric_mass():
     while True:
 
@@ -431,8 +430,6 @@ def imp_to_metric_mass():
                     print("INVALID")
                     time.sleep(2)
                     print("\n")
-
-
 
 def metric_to_imp_mass():
     while True:
@@ -492,7 +489,20 @@ def metric_to_imp_mass():
                     time.sleep(2)
                     print("\n")
 
+def imperial_speed():
+    print("mph , fps, knots")
 
+def metric_speed():
+    print("m/s, kph, knots")
+
+def imperial_speed_to_metric():
+    print("mph, fps to kph, m/s, knots")
+
+def metric_speed_to_imperial():
+    print("m/s, kph, to mph, fps")
+
+def knots():
+    print("knots to fps, mph, kph, m/s")
 
 
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
@@ -560,7 +570,7 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
         # Measurements to add:
         # Temperature
         # Volume
-        # Velocity
+        # Speed
         measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Exit Program\n> ").rstrip())
         
         if measurement_type == "1":

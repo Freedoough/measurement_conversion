@@ -278,12 +278,13 @@ def imperial_mass():
 
         first_unit = str(input("Unit to convert from?\n (1): Ounces (oz)\n (2): Pounds (lb)\n (3): US Tons (tn)\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
 
-        if first_unit in ["1", "2", "3", "4", "5", "6"]:
+        if first_unit in ["1", "2", "3", "4", "5"]:
 
-            if first_unit == "5":
+            if first_unit == "4":
                 print("Switching Conversion\n")
                 time.sleep(1)
-            elif first_unit == "6":
+                return
+            elif first_unit == "5":
                 print("Exiting Program")
                 sys.exit()
 
@@ -297,31 +298,31 @@ def imperial_mass():
                         time.sleep(2)
 
                         # oz, lbs, tn
-                    if first_unit == "1":
-                        print(f"{value} oz is {value / 16} lbs") #placeholder for equations
-                        print(f"{value} oz is {value / 3200} tn")
+                if first_unit == "1":
+                    print(f"{value} oz is {value / 16} lbs") 
+                    print(f"{value} oz is {value / 3200} tn")
                         
-                        time.sleep(3)
-                        print("\n")
-                        time.sleep(1)
-                    elif first_unit == "2":
-                        print(f"{value}lbs is {value * 16} oz")
-                        print(f"{value} lbs is {value * 2000} tn")
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value}lbs is {value * 16} oz")
+                    print(f"{value} lbs is {value * 2000} tn")
                         
-                        time.sleep(3)
-                        print("\n")
-                        time.sleep(1)
-                    elif first_unit == "3":
-                        print(f"{value}tn is {value * 32000} oz")
-                        print(f"{value} tn is {value * 2000} lbs")
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "3":
+                    print(f"{value}tn is {value * 32000} oz")
+                    print(f"{value} tn is {value * 2000} lbs")
 
-                        time.sleep(3)
-                        print("\n")
-                        time.sleep(1)
-                    else:
-                        print("INVALID")
-                        time.sleep(2)
-                        print("\n")
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
 
 def metric_mass():
     while True:
@@ -333,11 +334,11 @@ def metric_mass():
         
         if first_unit in ["1", "2", "3", "4", "5"]:
 
-            if first_unit == "5":
+            if first_unit == "4":
                 print("Switching Conversion\n")
                 time.sleep(1)
                 return
-            elif first_unit == "6":
+            elif first_unit == "5":
                 print("Exiting Program")
                 sys.exit()
 
@@ -385,11 +386,11 @@ def imp_to_metric_mass():
         first_unit = str(input("Unit to convert from?\n (1): Ounces (oz)\n (2): Pounds (lb)\n (3): US Tons (tn)\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
 
         if first_unit in ["1", "2", "3", "4", "5"]:
-            if first_unit == "5":
+            if first_unit == "4":
                 print("Switching Conversion\n")
                 time.sleep(1)
                 return
-            elif first_unit == "6":
+            elif first_unit == "5":
                 print("Exiting Program")
                 sys.exit()
 
@@ -442,11 +443,11 @@ def metric_to_imp_mass():
         first_unit = str(input("Unit to convert from?\n (1): Milligrams (mg)\n (2): Grams (g)\n (3): Kilograms\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
         
         if first_unit in ["1", "2", "3", "4", "5"]:
-            if first_unit == "5":
+            if first_unit == "4":
                 print("Switching Conversion\n")
                 time.sleep(1)
                 return
-            elif first_unit == "6":
+            elif first_unit == "5":
                 print("Exiting Program")
                 sys.exit()
 
@@ -528,27 +529,32 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
 
             
         def mass_convert():
-            unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Switch Conversion\n (6): Exit Program\n> ").rstrip())
-
-            if unit_system == "1":
-                imperial_mass()
-            elif unit_system == "2":
-                metric_mass()
-            elif unit_system == "3":
-                imp_to_metric_mass()
-            elif unit_system == "4":
-                metric_to_imp_mass()
-            elif unit_system == "5":
-                print("Switching Conversion\n")
+            
+            while True:
+                print("Mass Conversion:\n")
                 time.sleep(1)
-                return 
-            elif unit_system == "6":
-                print("Exiting Program")
-                sys.exit()
-            else:
-                print("INVALID")
-                time.sleep(2)
-                print("\n")
+
+                unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Switch Conversion\n (6): Exit Program\n> ").rstrip())
+
+                if unit_system == "1":
+                    imperial_mass()
+                elif unit_system == "2":
+                    metric_mass()
+                elif unit_system == "3":
+                    imp_to_metric_mass()
+                elif unit_system == "4":
+                    metric_to_imp_mass()
+                elif unit_system == "5":
+                    print("Switching Conversion\n")
+                    time.sleep(1)
+                    return 
+                elif unit_system == "6":
+                    print("Exiting Program")
+                    sys.exit()
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
 
 
         # Measurements to add:

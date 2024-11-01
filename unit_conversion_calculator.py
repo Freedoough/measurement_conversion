@@ -490,7 +490,50 @@ def metric_to_imp_mass():
                     print("\n")
 
 def imperial_speed():
-    print("mph , fps, knots")
+    #print("mph , fps, knots")
+    while True:
+
+        print("Imperial Speed Conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Miles per hour (Mph)\n (2): Feet per second (Fps)\n (3): Switch Conversion\n (4): Exit Program\n> ").rstrip())
+        
+        if first_unit in ["1", "2", "3", "4"]:
+            if first_unit == "3":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "4":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        time.sleep(2)
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+
+                if first_unit == "1":
+                    print(f"{value} mph is {value } fps")
+                    print(f"{value} mph is {value } kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} fps is {value } mph")
+                    print(f"{value} fps is {value } kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
+
 
 def metric_speed():
     print("m/s, kph, knots")
@@ -499,7 +542,7 @@ def imperial_speed_to_metric():
     print("mph, fps to kph, m/s, knots")
 
 def metric_speed_to_imperial():
-    print("m/s, kph, to mph, fps")
+    print("m/s, kph, to mph, fps, knots")
 
 def knots():
     print("knots to fps, mph, kph, m/s")
@@ -566,18 +609,50 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                     time.sleep(2)
                     print("\n")
 
+        def speed_convert():
+
+            while True:
+                print("Speed Conversion:\n")
+                time.sleep(1)
+
+                unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Knots\n (6): Switch Conversion\n (7): Exit Program\n> ").rstrip())
+
+                if unit_system == "1":
+                    imperial_speed()
+                elif unit_system == "2":
+                    metric_speed()
+                elif unit_system == "3":
+                    imperial_speed_to_metric()
+                elif unit_system == "4":
+                    metric_speed_to_imperial()
+                elif unit_system == "5":
+                    knots()
+                elif unit_system == "6":
+                    print("Switching Conversion\n")
+                    time.sleep(1)
+                    return
+                elif unit_system == "7":
+                    print("Exiting Program")
+                    sys.exit()
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
+
 
         # Measurements to add:
         # Temperature
         # Volume
-        # Speed
-        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Exit Program\n> ").rstrip())
+        # Speed x
+        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Speed\n (4): Exit Program\n> ").rstrip())
         
         if measurement_type == "1":
             distance_convert()
         elif measurement_type == "2":
             mass_convert()
         elif measurement_type == "3":
+            speed_convert()
+        elif measurement_type == "4":
             print("Exiting Program")
             time.sleep(1)
             return False

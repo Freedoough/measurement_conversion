@@ -376,7 +376,6 @@ def metric_mass():
                     time.sleep(2)
                     print("\n")
 
-
 def imp_to_metric_mass():
     while True:
 
@@ -431,8 +430,6 @@ def imp_to_metric_mass():
                     print("INVALID")
                     time.sleep(2)
                     print("\n")
-
-
 
 def metric_to_imp_mass():
     while True:
@@ -492,9 +489,221 @@ def metric_to_imp_mass():
                     time.sleep(2)
                     print("\n")
 
+def imperial_speed():
+    #print("mph , fps, knots")
+    while True:
+
+        print("Imperial Speed Conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Miles per hour (Mph)\n (2): Feet per second (Fps)\n (3): Switch Conversion\n (4): Exit Program\n> ").rstrip())
+        
+        if first_unit in ["1", "2", "3", "4"]:
+            if first_unit == "3":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "4":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        time.sleep(2)
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+
+                if first_unit == "1":
+                    print(f"{value} mph is ~{value * 1.467} fps")
+                    print(f"{value} mph is ~{value / 1.151} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} fps is ~{value / 1.467} mph")
+                    print(f"{value} fps is ~{value / 1.688} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
 
 
+def metric_speed(): #print("m/s, kph, knots")
+    while True:
+        print("Metric speed conversion:\n")
+        time.sleep(1)
 
+        first_unit = str(input("Unit to convert from?\n (1): Meters per second (m/s)\n (2): Kilometers per hour (kph)\n (3): Switch Conversion\n (4): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3", "4"]:
+            if first_unit == "3":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "4":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: "))
+                        time.sleep(2)
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print(f"{value} m/s is {value * 3.6} kph")
+                    print(f"{value} m/s is ~{value * 1.944} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} kph is {value / 3.6} m/s")
+                    print(f"{value} kph is {value / 1.852} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
+
+        
+
+def imperial_speed_to_metric():
+    while True:
+        print("Imperial to metric speed conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Miles per hour (mph)\n (2): Feet per second (fps)\n (3): Switch conversion\n (4): Exit Program\n> ").rstrip())
+        
+        if first_unit in ["1", "2", "3", "4"]:
+            if first_unit == "3":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "4":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: "))
+                        time.sleep(2)
+                    except ValueError:
+                        print("INVALID iput, please enter numeric value.\n")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print(f"{value} mph is {value / 2.237} m/s")
+                    print(f"{value} mph is ~{value * 1.609} kph")
+                    print(f"{value} mph is ~{value / 1.151} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} fps is ~{value / 3.281} m/s")
+                    print(f"{value} fps is ~{value * 1.097} kph")
+                    print(f"{value} fps is ~{value / 1.688} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+        
+
+def metric_speed_to_imperial():
+    while True:
+        print("Metric to Imperial speed conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Meters per second (m/s)\n (2): Kilometers per hour (kph)\n (3): Switch Conversion\n (4): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3", "4"]:
+            if first_unit == "3":
+                print("Switching Conversion\n")
+                time.sleep(1)
+                return
+            elif first_unit == "3":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert: ").rstrip())
+                        time.sleep(1)
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print(f"{value} m/s is ~{value * 3.281} fps")
+                    print(f"{value} m/s is {value * 2.237} mph")
+                    print(f"{value} m/s is ~{value * 1.944} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                elif first_unit == "2":
+                    print(f"{value} kph is ~{value / 1.097} fps")
+                    print(f"{value} kph is ~{value / 1.609} mph")
+                    print(f"{value} kph is {value / 1.852} kts")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+
+def knots():
+    while True:
+        print("Knots to Metric and Imperial speed conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): Knots\n (2): Switch Conversion\n (3): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3"]:
+            if first_unit == "2":
+                print("Switching Conversion")
+                time.sleep(1)
+                return
+            elif first_unit == "3":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert (Knots): ").rstrip())
+                        time.sleep(1)
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.\n")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print("Imperial Conversion:\n")
+                    print(f"{value} kts is ~{value * 1.688} fps")
+                    print(f"{value} kts is ~{value * 1.151} mph")
+                    print("Metric Conversion:\n")
+                    print(f"{value} kts is ~{value / 1.944} m/s")
+                    print(f"{value} kts is {value * 1.852} kph")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                        
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
     while True:
         
@@ -526,8 +735,7 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                     print("INVALID")
                 time.sleep(2)
                 print("\n")
-
-            
+   
         def mass_convert():
             
             while True:
@@ -556,18 +764,48 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                     time.sleep(2)
                     print("\n")
 
+        def speed_convert():
+
+            while True:
+                print("Speed Conversion:\n")
+                time.sleep(1)
+
+                unit_system = str(input("Which measurement system are you converting?\n (1): Imperial (Freedom Units)\n (2): Metric\n (3): Imp. -> Metric\n (4): Metric -> Imp.\n (5): Knots\n (6): Switch Conversion\n (7): Exit Program\n> ").rstrip())
+
+                if unit_system == "1":
+                    imperial_speed()
+                elif unit_system == "2":
+                    metric_speed()
+                elif unit_system == "3":
+                    imperial_speed_to_metric()
+                elif unit_system == "4":
+                    metric_speed_to_imperial()
+                elif unit_system == "5":
+                    knots()
+                elif unit_system == "6":
+                    print("Switching Conversion\n")
+                    time.sleep(1)
+                    return
+                elif unit_system == "7":
+                    print("Exiting Program")
+                    sys.exit()
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
 
         # Measurements to add:
         # Temperature
         # Volume
-        # Velocity
-        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Exit Program\n> ").rstrip())
+        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Speed\n (4): Exit Program\n> ").rstrip())
         
         if measurement_type == "1":
             distance_convert()
         elif measurement_type == "2":
             mass_convert()
         elif measurement_type == "3":
+            speed_convert()
+        elif measurement_type == "4":
             print("Exiting Program")
             time.sleep(1)
             return False
@@ -576,7 +814,4 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
             time.sleep(2)
             print("\n")
 
-        
-        
-
-get_info()
+get_info() # Initial function call for conversion prompts

@@ -510,7 +510,7 @@ def imperial_speed():
                 while True:
                     try:
                         value = float(input("Enter value to convert: ").rstrip())
-                        time.sleep(2)
+                        break
                     except ValueError:
                         print("INVALID input, please enter numeric value.\n")
                         time.sleep(2)
@@ -554,7 +554,7 @@ def metric_speed(): #print("m/s, kph, knots")
                 while True:
                     try:
                         value = float(input("Enter value to convert: "))
-                        time.sleep(2)
+                        break
                     except ValueError:
                         print("INVALID input, please enter numeric value.\n")
                         time.sleep(2)
@@ -598,7 +598,7 @@ def imperial_speed_to_metric():
                 while True:
                     try:
                         value = float(input("Enter value to convert: "))
-                        time.sleep(2)
+                        break
                     except ValueError:
                         print("INVALID iput, please enter numeric value.\n")
                         time.sleep(2)
@@ -642,7 +642,7 @@ def metric_speed_to_imperial():
                 while True:
                     try:
                         value = float(input("Enter value to convert: ").rstrip())
-                        time.sleep(1)
+                        break
                     except ValueError:
                         print("INVALID input, please enter numeric value.\n")
                         time.sleep(2)
@@ -685,7 +685,7 @@ def knots():
                 while True:
                     try:
                         value = float(input("Enter value to convert (Knots): ").rstrip())
-                        time.sleep(1)
+                        break
                     except ValueError:
                         print("INVALID input, please enter numeric value.\n")
                         time.sleep(2)

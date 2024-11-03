@@ -534,8 +534,7 @@ def imperial_speed():
                     time.sleep(2)
                     print("\n")
 
-
-def metric_speed(): #print("m/s, kph, knots")
+def metric_speed(): 
     while True:
         print("Metric speed conversion:\n")
         time.sleep(1)
@@ -576,8 +575,6 @@ def metric_speed(): #print("m/s, kph, knots")
                     print("INVALID")
                     time.sleep(2)
                     print("\n")
-
-        
 
 def imperial_speed_to_metric():
     while True:
@@ -621,8 +618,7 @@ def imperial_speed_to_metric():
                 else:
                     print("INVALID")
                     time.sleep(2)
-        
-
+       
 def metric_speed_to_imperial():
     while True:
         print("Metric to Imperial speed conversion:\n")

@@ -553,7 +553,7 @@ def metric_speed(): #print("m/s, kph, knots")
             else:
                 while True:
                     try:
-                        value = float(input("Enter value to convert: "))
+                        value = float(input("Enter value to convert: ").rstrip())
                         break
                     except ValueError:
                         print("INVALID input, please enter numeric value.\n")
@@ -597,7 +597,7 @@ def imperial_speed_to_metric():
             else:
                 while True:
                     try:
-                        value = float(input("Enter value to convert: "))
+                        value = float(input("Enter value to convert: ").rstrip())
                         break
                     except ValueError:
                         print("INVALID iput, please enter numeric value.\n")

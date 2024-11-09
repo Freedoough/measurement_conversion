@@ -631,13 +631,13 @@ def metric_speed_to_imperial():
                 print("Switching Conversion\n")
                 time.sleep(1)
                 return
-            elif first_unit == "3":
+            elif first_unit == "4":
                 print("Exiting Program")
                 sys.exit()
             else:
                 while True:
                     try:
-                        value = float(input("Enter value to convert: ").rstrip())
+                        value = float(input(f"Enter value to convert ({first_unit}): ").rstrip())
                         break
                     except ValueError:
                         print("INVALID input, please enter numeric value.\n")

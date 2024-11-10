@@ -1003,7 +1003,7 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                 print("Temperature Conversion:\n")
                 time.sleep(1)
 
-                unit_system = str(input("Which measurement are you converting?\n (1): °F\n (2): °C\n (3) °K\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
+                unit_system = str(input("Which measurement are you converting?\n (1): °F\n (2): °C\n (3): °K\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
 
                 if unit_system == "1":
                     f_to_c()

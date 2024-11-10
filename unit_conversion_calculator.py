@@ -1,6 +1,7 @@
 import math
 import time
 import sys
+from types import UnionType
 
 # add unit abbreviations in menu options and use them in calculation output
 
@@ -804,7 +805,109 @@ def knots():
                 else:
                     print("INVALID")
                     time.sleep(2)
-                        
+
+def f_to_c():
+    while True:
+        print("°F to °C Conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): °F \n (2): Switch Conversion\n (3): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3"]:
+            if first_unit == "2":
+                print("Switching Conversion")
+                time.sleep(1)
+                return
+            elif first_unit == "3":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert (°F): ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print(f"{value} °F is {(value - 32) * 5/9 } °C")
+                    print(f"{value} °F is {(value - 32) * 5/9 + 273.15} °K ")
+                    
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+
+def c_to_f():
+    while True:
+        print("°C to °F Conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): °C \n (2): Switch Conversion\n (3): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3"]:
+            if first_unit == "2":
+                print("Switching Conversion")
+                time.sleep(1)
+                return
+            elif first_unit == "3":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert (°C): ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print(f"{value} °C is {(value * 9/5) + 32 } °F")
+                    print(f"{value} °C is {value + 273.15} °K")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+
+def kelvin_convert():
+    while True:
+        print("°K to °C and °F Conversion:\n")
+        time.sleep(1)
+
+        first_unit = str(input("Unit to convert from?\n (1): °K \n (2): Switch Conversion\n (3): Exit Program\n> ").rstrip())
+
+        if first_unit in ["1", "2", "3"]:
+            if first_unit == "2":
+                print("Switching Conversion")
+                time.sleep(1)
+                return
+            elif first_unit == "3":
+                print("Exiting Program")
+                sys.exit()
+            else:
+                while True:
+                    try:
+                        value = float(input("Enter value to convert (°K): ").rstrip())
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.")
+                        time.sleep(2)
+                if first_unit == "1":
+                    print(f"{value} °K is {(value - 273.15) * 9/5 + 32 } °F")
+                    print(f"{value} °K is {value - 273.15} °C")
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
     while True:
         
@@ -895,10 +998,36 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                     time.sleep(2)
                     print("\n")
 
+        def temp_convert():
+            while True:
+                print("Temperature Conversion:\n")
+                time.sleep(1)
+
+                unit_system = str(input("Which measurement are you converting?\n (1): °F\n (2): °C\n (3) °K\n (4): Switch Conversion\n (5): Exit Program\n> ").rstrip())
+
+                if unit_system == "1":
+                    f_to_c()
+                elif unit_system == "2":
+                    c_to_f()
+                elif unit_system == "3":
+                    kelvin_convert()
+                elif unit_system == "4":
+                    print("Switching Conversion\n")
+                    time.sleep(1)
+                    return
+                elif unit_system == "5":
+                    print("Exiting Program")
+                    sys.exit()
+                else:
+                    print("INVALID")
+                    time.sleep(2)
+                    print("\n")
+
+
         # Measurements to add:
         # Temperature
         # Volume
-        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Speed\n (4): Exit Program\n> ").rstrip())
+        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Speed\n (4): Temperature\n (5): Exit Program\n> ").rstrip())
         
         if measurement_type == "1":
             distance_convert()
@@ -907,6 +1036,8 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
         elif measurement_type == "3":
             speed_convert()
         elif measurement_type == "4":
+            temp_convert()
+        elif measurement_type == "5":
             print("Exiting Program")
             time.sleep(1)
             return False

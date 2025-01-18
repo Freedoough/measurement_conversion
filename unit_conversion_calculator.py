@@ -907,7 +907,52 @@ def kelvin_convert():
                 else:
                     print("INVALID")
                     time.sleep(2)
-                    
+
+def digital_storage_convert(): # bits, bytes, kilobytes, megabytes, gigabytes, terabytes, petabytes, zetabytes?
+    while True:
+       print("Digital Storage Conversion:\n")
+       time.sleep(1)
+
+       first_unit = str(input("Unit to convert from?:\n (1): Bits\n (2): Bytes\n (3): Kilobytes\n (4): Megabytes\n (5): Gigabytes\n (6): Terabytes\n (7): Petabytes\n (8): Exabytes\n (9): Zettabytes\n (10): Switch Conversion\n (11): Exit Program\n > "))
+
+       if first_unit in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]:
+           if first_unit == "10":
+               print("Switching Conversion\n")
+               time.sleep(1)
+               return
+           elif first_unit == "11":
+               print("Exiting Program")
+               sys.exit()
+           else:
+                while True:
+                    try:
+                        value = float(input(f"Enter value to convert: ").rstrip)
+                        break
+                    except ValueError:
+                        print("INVALID input, please enter numeric value.")
+                        time.sleep(2)
+                    if first_unit == "1":
+                        print("bits")
+                    elif first_unit == "2":
+                        print("bytes")
+                    elif first_unit == "3":
+                        print("kilobytes")
+                    elif first_unit == "4":
+                        print("megabytes")
+                    elif first_unit == "5":
+                        print("gigabytes")
+                    elif first_unit == "6":
+                        print("terabytes")
+                    elif first_unit == "7":
+                        print("petabytes")
+                    elif first_unit == "8":
+                        print("exabytes")
+                    elif first_unit == "9":
+                        print("zettabytes")
+
+                    else:
+                        print("INVALID")
+                        time.sleep(2)
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
     while True:
         
@@ -1023,11 +1068,12 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
                     time.sleep(2)
                     print("\n")
 
+        #def digital_storage_convert():
+            print("storage")
 
         # Measurements to add:
-        # Temperature
         # Volume
-        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Speed\n (4): Temperature\n (5): Exit Program\n> ").rstrip())
+        measurement_type = str(input("What type of measurement would you like to convert?\n (1): Distance\n (2): Mass\n (3): Speed\n (4): Temperature\n (5): Digital Storage\n (6): Exit Program\n> ").rstrip())
         
         if measurement_type == "1":
             distance_convert()
@@ -1038,6 +1084,8 @@ def get_info(): # Initial prompt to get info about which meaurement is being cal
         elif measurement_type == "4":
             temp_convert()
         elif measurement_type == "5":
+            digital_storage_convert()
+        elif measurement_type == "6":
             print("Exiting Program")
             time.sleep(1)
             return False

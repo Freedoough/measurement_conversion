@@ -916,43 +916,178 @@ def digital_storage_convert(): # bits, bytes, kilobytes, megabytes, gigabytes, t
        first_unit = str(input("Unit to convert from?:\n (1): Bits\n (2): Bytes\n (3): Kilobytes\n (4): Megabytes\n (5): Gigabytes\n (6): Terabytes\n (7): Petabytes\n (8): Exabytes\n (9): Zettabytes\n (10): Switch Conversion\n (11): Exit Program\n > "))
 
        if first_unit in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]:
-           if first_unit == "10":
+            if first_unit == "10":
                print("Switching Conversion\n")
                time.sleep(1)
                return
-           elif first_unit == "11":
+            elif first_unit == "11":
                print("Exiting Program")
                sys.exit()
-           else:
-                while True:
+            else:
+
+               unit = {
+                   "1": "Bits",
+                   "2": "Bytes",
+                   "3": "Kilobytes",
+                   "4": "Megabytes",
+                   "5": "Gigabytes",
+                   "6": "Terabytes",
+                   "7": "Petabytes",
+                   "8": "Exabytes",
+                   "9": "Zettabytes",                   
+                   }
+
+               selected_unit = unit[first_unit]
+
+
+               while True:
                     try:
-                        value = float(input(f"Enter value to convert: ").rstrip)
+                        value = float(input(f"Enter value to convert ({selected_unit}): ").rstrip())
                         break
                     except ValueError:
                         print("INVALID input, please enter numeric value.")
                         time.sleep(2)
-                    if first_unit == "1":
-                        print("bits")
-                    elif first_unit == "2":
-                        print("bytes")
-                    elif first_unit == "3":
-                        print("kilobytes")
-                    elif first_unit == "4":
-                        print("megabytes")
-                    elif first_unit == "5":
-                        print("gigabytes")
-                    elif first_unit == "6":
-                        print("terabytes")
-                    elif first_unit == "7":
-                        print("petabytes")
-                    elif first_unit == "8":
-                        print("exabytes")
-                    elif first_unit == "9":
-                        print("zettabytes")
+               if first_unit == "1":
+                    # bits
+                    print(f"{value} b is {value / 8:,.6f} B")
+                    print(f"{value} b is {value / (8 * 1024):,.6f} kB")
+                    print(f"{value} b is {value / (8 * 1024 * 1024):,.6f} MB")
+                    print(f"{value} b is {value / (8 * 1024 * 1024 * 1024):,.6f} GB")
+                    print(f"{value} b is {value / (8 * 1024 * 1024 * 1024 * 1024):,.6f} TB")
+                    print(f"{value} b is {value / (8 * 1024 * 1024 * 1024 * 1024 * 1024):,.6f} PB")
+                    print(f"{value} b is {value / (8 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024):,.6f} EB")
+                    print(f"{value} b is {value / (8 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024):,.6f} ZB")
+                    
+                    
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "2":
+                    # bytes
+                    print(f"{value} B is {value * 8:,.6f} b")
+                    print(f"{value} B is {value / 1024:,.6f} KB")
+                    print(f"{value} B is {value / (1024 * 1024):,.6f} MB")
+                    print(f"{value} B is {value / (1024 * 1024 * 1024):,.6f} GB")
+                    print(f"{value} B is {value / (1024 * 1024 * 1024 * 1024):,.6f} TB")
+                    print(f"{value} B is {value / (1024 * 1024 * 1024 * 1024 * 1024):,.6f} PB")
+                    print(f"{value} B is {value / (1024 * 1024 * 1024 * 1024 * 1024 * 1024):,.6f} EB")  
+                    print(f"{value} B is {value / (1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024):,.6f} ZB")
 
-                    else:
-                        print("INVALID")
-                        time.sleep(2)
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "3":
+                    # kilobytes
+                    print(f"{value} KB is {value * 1024 * 8:,.6f} b")
+                    print(f"{value} KB is {value * 1024:,.6f} B") 
+                    print(f"{value} KB is {value / 1024:,.6f} MB")  
+                    print(f"{value} KB is {value / (1024 * 1024):,.6f} GB")  
+                    print(f"{value} KB is {value / (1024 * 1024 * 1024):,.6f} TB")  
+                    print(f"{value} KB is {value / (1024 * 1024 * 1024 * 1024):,.6f} PB") 
+                    print(f"{value} KB is {value / (1024 * 1024 * 1024 * 1024 * 1024):,.6f} EB")  
+                    print(f"{value} KB is {value / (1024 * 1024 * 1024 * 1024 * 1024 * 1024):6f} ZB")  
+
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "4":
+                    # megabytes
+                    print(f"{value} MB is {value * 1024 * 1024 * 8:,.6f} b")
+                    print(f"{value} MB is {value * 1024 * 1024:,.6f} B") 
+                    print(f"{value} MB is {value * 1024:,.6f} KB")                    
+                    print(f"{value} MB is {value / 1024:,.6f} GB") 
+                    print(f"{value} MB is {value / (1024 * 1024):,.6f} TB")  
+                    print(f"{value} MB is {value / (1024 * 1024 * 1024):,.6f} PB")  
+                    print(f"{value} MB is {value / (1024 * 1024 * 1024 * 1024):,.6f} EB")  
+                    print(f"{value} MB is {value / (1024 * 1024 * 1024 * 1024 * 1024):,.6f} ZB")  
+
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "5":
+                    # gigabytes
+                    print(f"{value} GB is {value * 1024 * 1024 * 1024 * 8:,.6f} b")
+                    print(f"{value} GB is {value * 1024 * 1024 * 1024:,.6f} B")  
+                    print(f"{value} GB is {value * 1024 * 1024} KB")  
+                    print(f"{value} GB is {value * 1024:,.6f} MB")                  
+                    print(f"{value} GB is {value / 1024:,.6f} TB")  
+                    print(f"{value} GB is {value / (1024 * 1024):,.6f} PB")  
+                    print(f"{value} GB is {value / (1024 * 1024 * 1024):,.6f} EB")  
+                    print(f"{value} GB is {value / (1024 * 1024 * 1024 * 1024):,.6f} ZB")  
+
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "6":
+                    # terabytes
+                    print(f"{value} TB is {value * 1024 * 1024 * 1024 * 1024 * 8:,.6f} b") 
+                    print(f"{value} TB is {value * 1024 * 1024 * 1024 * 1024:,.6f} B") 
+                    print(f"{value} TB is {value * 1024 * 1024 * 1024:,.6f} KB") 
+                    print(f"{value} TB is {value * 1024 * 1024:,.6f} MB") 
+                    print(f"{value} TB is {value * 1024:,.6f} GB") 
+                    print(f"{value} TB is {value / 1024:,.6f} PB") 
+                    print(f"{value} TB is {value / (1024 * 1024):,.6f} EB")  
+                    print(f"{value} TB is {value / (1024 * 1024 * 1024):,.6f} ZB")  
+
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "7":
+                    # petabytes
+
+                    print(f"{value} PB is {value * 1024 * 1024 * 1024 * 1024 * 1024 * 8:,.6f} b")  
+                    print(f"{value} PB is {value * 1024 * 1024 * 1024 * 1024 * 1024:,.6f} B") 
+                    print(f"{value} PB is {value * 1024 * 1024 * 1024 * 1024:,.6f} KB") 
+                    print(f"{value} PB is {value * 1024 * 1024 * 1024:,.6f} MB") 
+                    print(f"{value} PB is {value * 1024 * 1024:,.6f} GB") 
+                    print(f"{value} PB is {value * 1024:,.6f} TB")  
+                    print(f"{value} PB is {value / 1024:,.6f} EB") 
+                    print(f"{value} PB is {value / (1024 * 1024):,.6f} ZB")  
+
+
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "8":
+                    # exabytes
+
+                    print(f"{value} EB is {value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 8:,.6f} b") 
+                    print(f"{value} EB is {value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024:,.6f} B")
+                    print(f"{value} EB is {value * 1024 * 1024 * 1024 * 1024 * 1024:,.6f} KB") 
+                    print(f"{value} EB is {value * 1024 * 1024 * 1024 * 1024:,.6f} MB")  
+                    print(f"{value} EB is {value * 1024 * 1024 * 1024:,.6f} GB") 
+                    print(f"{value} EB is {value * 1024 * 1024:,.6f} TB") 
+                    print(f"{value} EB is {value * 1024:,.6f} PB")  
+                    print(f"{value} EB is {value / 1024:,.6f} ZB")            
+                    
+                    
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               elif first_unit == "9":
+                    # zettabytes
+
+                    print(f"{value} ZB is {value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 8:,.6f} b") 
+                    print(f"{value} ZB is {value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024:,.6f} B") 
+                    print(f"{value} ZB is {value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024:,.6f} KB") 
+                    print(f"{value} ZB is {value * 1024 * 1024 * 1024 * 1024 * 1024:,.6f} MB") 
+                    print(f"{value} ZB is {value * 1024 * 1024 * 1024 * 1024:,.6f} GB")  
+                    print(f"{value} ZB is {value * 1024 * 1024 * 1024:,.6f} TB") 
+                    print(f"{value} ZB is {value * 1024 * 1024:,.6f} PB") 
+                    print(f"{value} ZB is {value * 1024:,.6f} EB") 
+
+                    time.sleep(3)
+                    print("\n")
+                    time.sleep(1)
+               else:
+                    print("INVALID")
+                    time.sleep(2)
 def get_info(): # Initial prompt to get info about which meaurement is being calculated
     while True:
         
